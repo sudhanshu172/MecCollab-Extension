@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self';" />
+  <title>MecCollab — Email Task Assignor</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <svg width="24" height="24" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="50" fill="#6366f1"/>
+        <text x="50" y="65" font-family="Inter,sans-serif" font-size="50"
+              fill="white" text-anchor="middle" font-weight="700">✓</text>
+      </svg>
+      <span class="app-name">MecCollab</span>
+    </div>
+    <button id="btn-sign-in" class="btn btn-outline" aria-label="Sign in with Google">Sign In</button>
+  </header>
+
+  <main>
+    <div id="status-bar" class="status-bar" role="status" aria-live="polite"></div>
+    <div id="empty-state" class="empty-state" hidden>
+      <p>✅ No pending email tasks</p>
+      <p class="hint">New tasks from unread emails will appear here.</p>
+    </div>
+    <section id="task-queue" aria-label="Pending email tasks">
+      <div id="task-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <button id="btn-refresh" class="btn btn-ghost" aria-label="Refresh email tasks">↻ Refresh</button>
+    <a href="https://github.com/sudhanshu172/MecCollab" target="_blank"
+       rel="noopener noreferrer" class="footer-link">Open MecCollab ↗</a>
+  </footer>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

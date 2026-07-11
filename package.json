@@ -1,0 +1,19 @@
+{
+  "name": "meccollab-extension",
+  "version": "1.0.0",
+  "description": "Chrome Extension for MecCollab — Gmail auto task assignment",
+  "type": "module",
+  "scripts": {
+    "test":       "node --experimental-vm-modules node_modules/.bin/jest --testPathPattern=tests/",
+    "test:watch": "node --experimental-vm-modules node_modules/.bin/jest --watch",
+    "lint":       "eslint lib/ background/ popup/ content/ --ext .js"
+  },
+  "devDependencies": {
+    "jest":   "^29.7.0",
+    "eslint": "^8.57.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  }
+}
